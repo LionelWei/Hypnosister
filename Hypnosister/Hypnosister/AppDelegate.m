@@ -21,10 +21,11 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    LWHypnosisViewController *hvc = [[LWHypnosisViewController alloc] init];
     
+    LWHypnosisViewController *hvc = [[LWHypnosisViewController alloc] init];
     self.window.rootViewController = hvc;
     self.window.backgroundColor = [UIColor yellowColor];
+    
     [self.window makeKeyAndVisible];
 
     return YES;

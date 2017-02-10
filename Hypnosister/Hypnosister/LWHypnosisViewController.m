@@ -15,16 +15,13 @@
 
 @implementation LWHypnosisViewController
 
-- (void)loadView {
-    CGRect bounds = CGRectMake(50, 50, 300, 400);
-    LWHypnosisView *hypView = [[LWHypnosisView alloc] initWithFrame:bounds];
-    hypView.backgroundColor = [UIColor redColor];
-    self.view = hypView;
-}
-
+#pragma mark - DidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    LWHypnosisView *h = [[LWHypnosisView alloc]initWithFrame:CGRectMake(50, 50, 300, 400)];
+    h.backgroundColor = [UIColor redColor];
+    [self.view addSubview:h];
 }
 
 - (void)didReceiveMemoryWarning {
