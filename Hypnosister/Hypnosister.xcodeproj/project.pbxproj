@@ -13,6 +13,8 @@
 		E27E523C1E4D60A300934EFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27E523A1E4D60A300934EFE /* Main.storyboard */; };
 		E27E523E1E4D60A300934EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E27E523D1E4D60A300934EFE /* Assets.xcassets */; };
 		E27E52411E4D60A300934EFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27E523F1E4D60A300934EFE /* LaunchScreen.storyboard */; };
+		E27E524A1E4D617500934EFE /* LWHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E52491E4D617500934EFE /* LWHypnosisView.m */; };
+		E27E524D1E4D68EB00934EFE /* LWHypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E524C1E4D68EB00934EFE /* LWHypnosisViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		E27E523D1E4D60A300934EFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E27E52401E4D60A300934EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E27E52421E4D60A300934EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E27E52481E4D617500934EFE /* LWHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWHypnosisView.h; sourceTree = "<group>"; };
+		E27E52491E4D617500934EFE /* LWHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWHypnosisView.m; sourceTree = "<group>"; };
+		E27E524B1E4D68EB00934EFE /* LWHypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWHypnosisViewController.h; sourceTree = "<group>"; };
+		E27E524C1E4D68EB00934EFE /* LWHypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWHypnosisViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,8 @@
 			children = (
 				E27E52341E4D60A300934EFE /* AppDelegate.h */,
 				E27E52351E4D60A300934EFE /* AppDelegate.m */,
+				E27E52481E4D617500934EFE /* LWHypnosisView.h */,
+				E27E52491E4D617500934EFE /* LWHypnosisView.m */,
 				E27E52371E4D60A300934EFE /* ViewController.h */,
 				E27E52381E4D60A300934EFE /* ViewController.m */,
 				E27E523A1E4D60A300934EFE /* Main.storyboard */,
@@ -67,6 +75,8 @@
 				E27E523F1E4D60A300934EFE /* LaunchScreen.storyboard */,
 				E27E52421E4D60A300934EFE /* Info.plist */,
 				E27E52311E4D60A300934EFE /* Supporting Files */,
+				E27E524B1E4D68EB00934EFE /* LWHypnosisViewController.h */,
+				E27E524C1E4D68EB00934EFE /* LWHypnosisViewController.m */,
 			);
 			path = Hypnosister;
 			sourceTree = "<group>";
@@ -105,6 +115,7 @@
 		E27E52261E4D60A300934EFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LW;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Lionel Wei";
 				TargetAttributes = {
@@ -152,7 +163,9 @@
 			files = (
 				E27E52391E4D60A300934EFE /* ViewController.m in Sources */,
 				E27E52361E4D60A300934EFE /* AppDelegate.m in Sources */,
+				E27E524A1E4D617500934EFE /* LWHypnosisView.m in Sources */,
 				E27E52331E4D60A300934EFE /* main.m in Sources */,
+				E27E524D1E4D68EB00934EFE /* LWHypnosisViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +322,7 @@
 				E27E52471E4D60A300934EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
