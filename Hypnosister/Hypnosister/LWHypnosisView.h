@@ -10,4 +10,6 @@
 
 @interface LWHypnosisView : UIView
 
+- (void) updateColor:(UIColor *) color;
+
 @end

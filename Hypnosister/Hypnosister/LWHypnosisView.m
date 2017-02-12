@@ -57,4 +57,9 @@
     [self setNeedsDisplay];
 }
 
+- (void) updateColor:(UIColor *) color {
+    self.circleColor = color;
+    [self setNeedsDisplay];
+}
+
 @end

@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.tabBarItem.title = @"Reminder";
+        self.tabBarItem.image = [UIImage imageNamed:@"icon_fullscreen_close_normal"];
     }
     return self;
 }
@@ -59,7 +60,14 @@
     
     [alertController addAction:okAction];
     
-    [self presentViewController:alertController animated:YES completion:nil];
-
+//    [self presentViewController:alertController animated:YES completion:nil];
+    
+    NSDate *date = self.dataPicker.date;
+    UILocalNotification *note = [[UILocalNotification alloc] init];
+    note.alertBody = @"哈哈";
+    note.fireDate = date;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:note];
+    
 }
 @end

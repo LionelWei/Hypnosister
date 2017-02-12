@@ -11,6 +11,7 @@
 
 @interface LWHypnosisViewController ()
 
+@property (nonatomic, strong) LWHypnosisView* h;
 @end
 
 @implementation LWHypnosisViewController
@@ -19,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.tabBarItem.title = @"Hypnotize";
+        self.tabBarItem.image = [UIImage imageNamed:@"icon_home_normal"];
     }
     return self;
 }
@@ -33,10 +35,10 @@
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
     [self.view addSubview:scrollView];
     
-    LWHypnosisView *h = [[LWHypnosisView alloc]initWithFrame:screenRect];
-    h.backgroundColor = [UIColor redColor];
+    self.h = [[LWHypnosisView alloc]initWithFrame:screenRect];
+    self.h.backgroundColor = [UIColor redColor];
     
-    [scrollView addSubview:h];
+    [scrollView addSubview:self.h];
 
     screenRect.origin.x += screenRect.size.width;
     LWHypnosisView *another = [[LWHypnosisView alloc] initWithFrame:screenRect];
@@ -44,8 +46,39 @@
     [scrollView addSubview:another];
     [scrollView setPagingEnabled:YES];
     
+    
+    NSArray *segmentedArray = [[NSArray alloc] initWithObjects:@"1",@"2",@"3",@"4",nil];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
+    segmentedControl.frame = CGRectMake(20.0, 350, 200, 40);
+    
+    [segmentedControl addTarget:self action:@selector(clickSeg:) forControlEvents:UIControlEventValueChanged];
+    
+    [scrollView addSubview:segmentedControl];
+    
+    
     scrollView.contentSize = bigRect.size;//CGSizeMake(bigRect.size.width * 1.5, bigRect.size.height * 1.5);
     
+}
+
+- (void) clickSeg:(UISegmentedControl *)seg {
+    NSInteger index = seg.selectedSegmentIndex;
+    NSLog(@"%lu is selected", index);
+    switch (index) {
+        case 0:
+            [self.h updateColor:[UIColor whiteColor]];
+            break;
+        case 1:
+            [self.h updateColor:[UIColor yellowColor]];
+            break;
+        case 2:
+            [self.h updateColor:[UIColor blueColor]];
+            break;
+        case 3:
+            [self.h updateColor:[UIColor blackColor]];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
