@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LWHypnosisView.h"
 #import "LWHypnosisViewController.h"
+#import "LWReminderViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +23,16 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    NSBundle *appBundle = [NSBundle mainBundle];
+    
+    LWReminderViewController *rvc = [[LWReminderViewController alloc] initWithNibName:@"LWReminderViewController" bundle:appBundle];
+    
     LWHypnosisViewController *hvc = [[LWHypnosisViewController alloc] init];
-    self.window.rootViewController = hvc;
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[hvc, rvc];
+    
+    self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor yellowColor];
     
     [self.window makeKeyAndVisible];

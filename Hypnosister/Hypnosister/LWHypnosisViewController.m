@@ -15,13 +15,37 @@
 
 @implementation LWHypnosisViewController
 
-#pragma mark - DidLoad
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.tabBarItem.title = @"Hypnotize";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    LWHypnosisView *h = [[LWHypnosisView alloc]initWithFrame:CGRectMake(50, 50, 300, 400)];
+    CGRect screenRect = CGRectMake(0, 0, 300, 400);
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [self.view addSubview:scrollView];
+    
+    LWHypnosisView *h = [[LWHypnosisView alloc]initWithFrame:screenRect];
     h.backgroundColor = [UIColor redColor];
-    [self.view addSubview:h];
+    
+    [scrollView addSubview:h];
+
+    screenRect.origin.x += screenRect.size.width;
+    LWHypnosisView *another = [[LWHypnosisView alloc] initWithFrame:screenRect];
+    
+    [scrollView addSubview:another];
+    [scrollView setPagingEnabled:YES];
+    
+    scrollView.contentSize = bigRect.size;//CGSizeMake(bigRect.size.width * 1.5, bigRect.size.height * 1.5);
+    
 }
 
 - (void)didReceiveMemoryWarning {
